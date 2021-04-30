@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 2f;
     private float defaultMovementSpeed;
 
+    private bool isButtonPressed = false;
     private bool isMoving;
     private bool isVertical;
     private bool isHorizontal;
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = Input.GetAxis("Vertical");
             isVertical = true;
             isHorizontal = false;
+            isButtonPressed = true;
         }
 
         if (Input.GetKey(KeyCode.S) == true)
@@ -174,32 +176,31 @@ public class PlayerMovement : MonoBehaviour
                 calculatedMovement.x = movementSpeed * 100f * moveDirection * Time.fixedDeltaTime;
             }
 
-            Move(calculatedMovement, isJumpPressed);
-            isJumpPressed = false;
+            Move(calculatedMovement);
             isHorizontal = false;
             isVertical = false;
         }
 
-        private void Move(Vector3 moveDirection, bool isJumpPressed)
+        private void Move(Vector2 moveDirection)
         {
             rigidBody2D.velocity = Vector3.SmoothDamp(rigidBody2D.velocity, moveDirection, ref velocity, smoothTime);
 
-            /* if (isJumpPressed == true && isGrounded == true)
-             {
-                 rigidBody2D.AddForce(new Vector2(0f, jumpForce * 100f));
-             }
+        /* if (isJumpPressed == true && isGrounded == true)
+         {
+             rigidBody2D.AddForce(new Vector2(0f, jumpForce * 100f));
+         }
 
-             if (moveDirection.x > 0f && isFacingLeft == true)
-             {
-                 FlipSpriteDirection();
-             }
+         if (moveDirection.x > 0f && isFacingLeft == true)
+         {
+             FlipSpriteDirection();
+         }
 
-             else if (moveDirection.x < 0f && isFacingLeft == false)
-             {
-                 FlipSpriteDirection();
-             }*/
+         else if (moveDirection.x < 0f && isFacingLeft == false)
+         {
+             FlipSpriteDirection();
+         }*/
 
-        }
+    }
 
         private void FlipSpriteDirection()
         {
