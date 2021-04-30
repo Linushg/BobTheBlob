@@ -46,7 +46,26 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKey(KeyCode.W) == true)
+        {
+            moveDirection = Input.GetAxis("Vertical");
+            isVertical = true;
+            isHorizontal = false;
+        }
 
+        if (Input.GetKey(KeyCode.S) == true)
+        {
+            moveDirection = Input.GetAxis("Vertical");
+            isVertical = true;
+            isHorizontal = false;
+        }
+
+        if (Input.GetKey(KeyCode.A) == true || Input.GetKey(KeyCode.D) == true)
+        {
+            moveDirection = Input.GetAxis("Horizontal");
+            isVertical = false;
+            isHorizontal = true;
+        }
 
         if (Input.touchCount == 1) // user is touching the screen with a single touch
         {
@@ -120,26 +139,6 @@ public class PlayerMovement : MonoBehaviour
                 isMoving = false;
             }
 
-            if (Input.GetKey(KeyCode.W) == true)
-            {
-                moveDirection = Input.GetAxis("Vertical");
-                isVertical = true;
-                isHorizontal = false;
-            }
-
-            if (Input.GetKey(KeyCode.S) == true)
-            {
-                moveDirection = Input.GetAxis("Vertical");
-                isVertical = true;
-                isHorizontal = false;
-            }
-
-            if (Input.GetKey(KeyCode.A) == true || Input.GetKey(KeyCode.D) == true)
-            {
-                moveDirection = Input.GetAxis("Horizontal");
-                isVertical = false;
-                isHorizontal = true;
-            }
 
             //animator.SetBool("IsGrounded", isGrounded);
             //animator.SetFloat("Speed", Mathf.Abs(moveDirection));
