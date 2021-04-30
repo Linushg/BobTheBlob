@@ -2382,7 +2382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 5917292977718931898}
-  movementSpeed: 3
+  movementSpeed: 6
   jumpForce: 0
   smoothTime: 0.2
   whatIsGround:
@@ -2438,7 +2438,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!4 &5917292977718931900 stripped
 Transform:
@@ -2535,6 +2535,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1825348431}
     m_Modifications:
+    - target: {fileID: 8537238721484514569, guid: f7723ce3514b0b640ab15d0fcd2b6993, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537238721484514569, guid: f7723ce3514b0b640ab15d0fcd2b6993, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8537238721484514574, guid: f7723ce3514b0b640ab15d0fcd2b6993, type: 3}
       propertyPath: m_RootOrder
       value: 0
