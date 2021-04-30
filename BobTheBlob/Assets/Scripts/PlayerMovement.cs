@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -67,6 +69,16 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = Input.GetAxis("Horizontal");
             isVertical = false;
             isHorizontal = true;
+        }
+	    // Check if Platform is Android
+        if (Application.platform == RuntimePlatform.Android) { 
+        
+            // Check if Back was pressed this frame
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+            
+                // Quit to main menu
+                SceneManager.LoadScene(0);
+            }
         }
 
         if (Input.touchCount == 1) // user is touching the screen with a single touch
