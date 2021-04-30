@@ -81,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.2f, whatIsGround);
 
+
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject != gameObject)
@@ -117,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody2D.velocity = Vector3.SmoothDamp(rigidBody2D.velocity, moveDirection, ref velocity, smoothTime);
 
-        if (isJumpPressed == true && isGrounded == true)
+       /* if (isJumpPressed == true && isGrounded == true)
         {
             rigidBody2D.AddForce(new Vector2(0f, jumpForce * 100f));
         }
@@ -130,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         else if (moveDirection.x < 0f && isFacingLeft == false)
         {
             FlipSpriteDirection();
-        }
+        }*/
 
     }
 
