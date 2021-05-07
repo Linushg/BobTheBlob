@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.W) == true)
+        if (Input.GetKey(KeyCode.W) == true || Input.GetKey(KeyCode.UpArrow) == true)
         {
             moveDirection = Input.GetAxis("Vertical");
             isVertical = true;
@@ -57,14 +57,14 @@ public class PlayerMovement : MonoBehaviour
             isButtonPressed = true;
         }
 
-        if (Input.GetKey(KeyCode.S) == true)
+        if (Input.GetKey(KeyCode.S) == true || Input.GetKey(KeyCode.DownArrow) == true)
         {
             moveDirection = Input.GetAxis("Vertical");
             isVertical = true;
             isHorizontal = false;
         }
 
-        if (Input.GetKey(KeyCode.A) == true || Input.GetKey(KeyCode.D) == true)
+        if (Input.GetKey(KeyCode.A) == true || Input.GetKey(KeyCode.D) == true || Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKey(KeyCode.RightArrow) == true)
         {
             moveDirection = Input.GetAxis("Horizontal");
             isVertical = false;
@@ -105,14 +105,14 @@ public class PlayerMovement : MonoBehaviour
                     {   //If the horizontal movement is greater than the vertical movement...
                         if ((lp.x > fp.x))  //If the movement was to the right)
                         {   //Right swipe
-                            Debug.Log("Right Swipe");
+                            Debug.Log("Bob Right Swipe");
                             moveDirection = Input.GetAxis("Horizontal");
                             isVertical = false;
                             isHorizontal = true;
                         }
                         else
                         {   //Left swipe
-                            Debug.Log("Left Swipe");
+                            Debug.Log("Bob Left Swipe");
                             moveDirection = Input.GetAxis("Horizontal");
                             isVertical = false;
                             isHorizontal = true;
@@ -122,14 +122,14 @@ public class PlayerMovement : MonoBehaviour
                     {   //the vertical movement is greater than the horizontal movement
                         if (lp.y > fp.y)  //If the movement was up
                         {   //Up swipe
-                            Debug.Log("Up Swipe");
+                            Debug.Log("Bob Up Swipe");
                             moveDirection = Input.GetAxis("Vertical");
                             isVertical = true;
                             isHorizontal = false;
                         }
                         else
                         {   //Down swipe
-                            Debug.Log("Down Swipe");
+                            Debug.Log("Bob Down Swipe");
                             moveDirection = Input.GetAxis("Vertical");
                             isVertical = true;
                             isHorizontal = false;
