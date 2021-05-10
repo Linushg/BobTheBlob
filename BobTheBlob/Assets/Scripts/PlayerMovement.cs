@@ -181,12 +181,17 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (isVertical == true) {
-                calculatedMovement.y = movementSpeed * 100f * moveDirection * Time.fixedDeltaTime;
+                calculatedMovement.y = movementSpeed * 100f * moveDirection /** Time.fixedDeltaTime*/;
             }
             if (isHorizontal == true)
             {
-                calculatedMovement.x = movementSpeed * 100f * moveDirection * Time.fixedDeltaTime;
+            calculatedMovement.x = movementSpeed * 100f * moveDirection /** Time.fixedDeltaTime*/;
+            while (isMoving == true)
+            { 
+                calculatedMovement.x = movementSpeed * 100f * moveDirection /** Time.fixedDeltaTime*/;
+                Move(calculatedMovement);
             }
+        }
 
             Move(calculatedMovement);
             isHorizontal = false;
