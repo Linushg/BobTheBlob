@@ -17,12 +17,12 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 2f;
     private float defaultMovementSpeed;
 
-    private bool isButtonPressed = false;
-    private bool isMoving;
+    //private bool isButtonPressed = false;
+    //private bool isMoving;
     private bool isVertical;
     private bool isHorizontal;
     private float moveDirection = 0f;
-    private bool isJumpPressed = false;
+    //private bool isJumpPressed = false;
     public float jumpForce = 10f;
 
     private bool isFacingLeft = false;
@@ -33,7 +33,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 fp;   //First touch position
     private Vector3 lp;   //Last touch position
     private float dragDistance;  //minimum distance for a swipe to be registered
-
+    private Vector2 startPos;
+    public int pixelDistToDectect = 50;
+    private bool mouseButtonDown;
     [SerializeField] private LayerMask whatIsGround;
 
     public void Start()
@@ -49,12 +51,15 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        /////KEYBOARD INPUT/////
+        
+        
         if (Input.GetKey(KeyCode.W) == true || Input.GetKey(KeyCode.UpArrow) == true)
         {
             moveDirection = Input.GetAxis("Vertical");
             isVertical = true;
             isHorizontal = false;
-            isButtonPressed = true;
+            //isButtonPressed = true;
         }
 
         if (Input.GetKey(KeyCode.S) == true || Input.GetKey(KeyCode.DownArrow) == true)
@@ -70,17 +75,17 @@ public class PlayerMovement : MonoBehaviour
             isVertical = false;
             isHorizontal = true;
         }
-	    // Check if Platform is Android
-        if (Application.platform == RuntimePlatform.Android) { 
-        
-            // Check if Back was pressed this frame
-            if (Input.GetKeyDown(KeyCode.Escape)) {
-            
-                // Quit to main menu
-                SceneManager.LoadScene(0);
-            }
-        }
 
+	    // Check if Esc/Back (Android) was pressed this frame
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            
+            // Quit to main menu
+            SceneManager.LoadScene(0);
+        }
+        
+
+        /////TOUCH INPUT/////
+        
         if (Input.touchCount == 1) // user is touching the screen with a single touch
         {
             Touch touch = Input.GetTouch(0); // get the touch
@@ -144,58 +149,106 @@ public class PlayerMovement : MonoBehaviour
 
             //moveDirection = Input.GetAxis("Horizontal");
             //moveDirection = Input.GetAxis("Vertical");
-            if (Mathf.Abs(moveDirection) > 0.05)
+            /*if (Mathf.Abs(moveDirection) > 0.05)
             {
                 isMoving = true;
             }
             else
             {
                 isMoving = false;
-            }
+            }*/
 
 
             //animator.SetBool("IsGrounded", isGrounded);
             //animator.SetFloat("Speed", Mathf.Abs(moveDirection));
         }
-    }
 
-        private void FixedUpdate()
+        /////MOUSE INPUT/////
+
+        if(mouseButtonDown == false && Input.GetMouseButtonDown(0))
         {
-            isGrounded = false;
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.2f, whatIsGround);
-
-
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                if (colliders[i].gameObject != gameObject)
-                {
-                    isGrounded = true;
-                }
-            }
-
-            Vector3 calculatedMovement = Vector3.zero;
-
-            if (isGrounded == false)
-            {
-
-            }
-
-            if (isVertical == true) {
-                calculatedMovement.y = movementSpeed * 100f * moveDirection * Time.fixedDeltaTime;
-            }
-            if (isHorizontal == true)
-            {
-                calculatedMovement.x = movementSpeed * 100f * moveDirection * Time.fixedDeltaTime;
-            }
-
-            Move(calculatedMovement);
-            isHorizontal = false;
-            isVertical = false;
+            startPos = Input.mousePosition;
+            mouseButtonDown = true;
         }
 
-        private void Move(Vector2 moveDirection)
+        if(mouseButtonDown)
         {
-            rigidBody2D.velocity = Vector3.SmoothDamp(rigidBody2D.velocity, moveDirection, ref velocity, smoothTime);
+            //Is the screen being swiped up?
+            if(Input.mousePosition.y >= startPos.y + pixelDistToDectect)
+            {
+                mouseButtonDown = false;
+                Debug.Log("Mouse up");
+            }
+
+            //Is the screen being swiped left?
+
+            else if(Input.mousePosition.x <= startPos.x - pixelDistToDectect)
+            {
+                mouseButtonDown = false;
+                Debug.Log("Mouse left");
+            }
+
+            //Is the screen being swiped right?
+
+            else if(Input.mousePosition.x >= startPos.x + pixelDistToDectect)
+            {
+                mouseButtonDown = false;
+                Debug.Log("Mouse right");
+            }
+            
+            //Is the screen being swiped down?
+            else if(Input.mousePosition.y <= startPos.y - pixelDistToDectect)
+            {
+                mouseButtonDown = false;
+                Debug.Log("Mouse down");
+            }    
+            
+        }
+        if (mouseButtonDown && Input.GetMouseButtonUp(0))
+        {
+            mouseButtonDown = false;
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        isGrounded = false;
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.2f, whatIsGround);
+
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+                isGrounded = true;
+            }
+        }
+
+        Vector3 calculatedMovement = Vector3.zero;
+
+        if (isGrounded == false)
+        {
+
+        }
+
+        if (isVertical == true)
+        {
+            calculatedMovement.y = movementSpeed * 100f * moveDirection * Time.fixedDeltaTime;
+        }
+        if (isHorizontal == true)
+        {
+            calculatedMovement.x = movementSpeed * 100f * moveDirection * Time.fixedDeltaTime;
+        }
+
+        Move(calculatedMovement);
+        isHorizontal = false;
+        isVertical = false;
+    }
+
+    private void Move(Vector2 moveDirection)
+    {
+        rigidBody2D.velocity = Vector3.SmoothDamp(rigidBody2D.velocity, moveDirection, ref velocity, smoothTime);
 
         /* if (isJumpPressed == true && isGrounded == true)
          {
@@ -214,9 +267,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-        private void FlipSpriteDirection()
-        {
-            spritrenderer.flipX = !isFacingLeft;
-            isFacingLeft = !isFacingLeft;
-        }
+    private void FlipSpriteDirection()
+    {
+        spritrenderer.flipX = !isFacingLeft;
+        isFacingLeft = !isFacingLeft;
     }
+}
