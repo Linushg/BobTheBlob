@@ -177,14 +177,30 @@ public class PlayerMovement : MonoBehaviour
             if(Input.mousePosition.y >= startPos.y + pixelDistToDectect)
             {
                 mouseButtonDown = false;
+                moveDirection = Input.GetAxis("Vertical");
+                isVertical = true;
+                isHorizontal = false;
                 Debug.Log("Mouse up");
             }
+
+            //Is the screen being swiped down?
+            else if(Input.mousePosition.y <= startPos.y - pixelDistToDectect)
+            {
+                mouseButtonDown = false;
+                moveDirection = Input.GetAxis("Vertical");
+                isVertical = true;
+                isHorizontal = false;
+                Debug.Log("Mouse down");
+            }    
 
             //Is the screen being swiped left?
 
             else if(Input.mousePosition.x <= startPos.x - pixelDistToDectect)
             {
                 mouseButtonDown = false;
+                moveDirection = Input.GetAxis("Horizontal");
+                isVertical = false;
+                isHorizontal = true;
                 Debug.Log("Mouse left");
             }
 
@@ -193,15 +209,13 @@ public class PlayerMovement : MonoBehaviour
             else if(Input.mousePosition.x >= startPos.x + pixelDistToDectect)
             {
                 mouseButtonDown = false;
+                moveDirection = Input.GetAxis("Horizontal");
+                isVertical = false;
+                isHorizontal = true;
                 Debug.Log("Mouse right");
             }
             
-            //Is the screen being swiped down?
-            else if(Input.mousePosition.y <= startPos.y - pixelDistToDectect)
-            {
-                mouseButtonDown = false;
-                Debug.Log("Mouse down");
-            }    
+            
             
         }
         if (mouseButtonDown && Input.GetMouseButtonUp(0))
