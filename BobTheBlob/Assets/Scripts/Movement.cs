@@ -106,6 +106,12 @@ public class Movement : MonoBehaviour
                         Debug.Log("Swipe right");
                     }
 
+                    //If none of the above, assume Screen Tap
+                    else
+                    {
+                        Debug.Log("Screen Tap");
+                    }
+
                     
                 }
 
@@ -160,6 +166,13 @@ public class Movement : MonoBehaviour
                     fingerDown = false;
                     rb.velocity = new Vector2(1 * speed * Time.deltaTime, 0);
                     Debug.Log("Mouse right");
+                }
+
+                //If none of the above, assume Mouse Click
+                
+                else
+                {
+                    Debug.Log("Mouse click");
                 }
 
             }

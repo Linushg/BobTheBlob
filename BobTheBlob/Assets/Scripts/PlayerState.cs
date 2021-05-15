@@ -18,7 +18,7 @@ public class PlayerState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ingredientPoints = initial¥IngredientPoints;
+        ingredientPoints = initialIngredientPoints;
         if (useStartPosition == true){
             gameObject.transform.position = startPosition.transform.position;
         }
@@ -30,21 +30,21 @@ public class PlayerState : MonoBehaviour
     {
         
     }
-    public void DoHarm(int doHarmByThisMuch) {
+    /*public void DoHarm(int doHarmByThisMuch) {
         healthPoints -= doHarmByThisMuch;
         if (healthPoints <= 0) {
             Respawn();
         }
-    }
+    }*/
 
-    public void Respawn() {
+    /*public void Respawn() {
         healthPoints = initialHealthPoints;
         gameObject.transform.position = respawnPosition.transform.position;
-    }
+    }*/
 
-    public void CoinPickup() {
+    /*public void CoinPickup() {
         coinAmount++;
-    }
+    }*/
 
     public void ChangeRespawnPosition(GameObject newRespawnPosition) {
         respawnPosition = newRespawnPosition;
