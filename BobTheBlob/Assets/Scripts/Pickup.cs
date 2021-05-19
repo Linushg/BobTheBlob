@@ -36,7 +36,7 @@ public class Pickup : MonoBehaviour
         {
             if (canPickUp == true)
             {
-                //collision.GetComponent<PlayerState>().CoinPickup();
+                //collision.GetComponent<PlayerState>().IngredientPickup();
                 spriteRenderer.sprite = null;
                 //animator.enabled = false;
                 //particles.Play();

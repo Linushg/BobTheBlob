@@ -5,33 +5,33 @@ using UnityEngine;
 public class PlayerState : MonoBehaviour
 {
   // Bob the blob
-    public int ingredientPoints = 2;
-    public int initialIngredientPoints = 0;
+    public int healthPoints = 2;
+    public int initialHealthPoints = 3;
 
-    public int amountOfIngredients = 0;
+    public int ingredientAmount = 0;
 
-    public GameObject respawnPosition;
+    /*public GameObject respawnPosition;
     [SerializeField] public GameObject startPosition;
     [SerializeField] public bool useStartPosition;
-  
+  */
 
     // Start is called before the first frame update
     void Start()
     {
-        ingredientPoints = initialIngredientPoints;
+        healthPoints = initialHealthPoints;
 
-        if (useStartPosition == true){
+        /* if (useStartPosition == true){
             gameObject.transform.position = startPosition.transform.position;
         }
-        respawnPosition = startPosition;
+        respawnPosition = startPosition; */
     }
 
     // Update is called once per frame
    /* void Update() //kanske jättekonstigt
     {
-        //private void onTriggerEnter2D(Collider collision){
-            //if (collision.CompareTag("Wall")== true){
-               // Shake(this); //gameobject
+        private void onTriggerEnter2D(Collider collision){
+            if (collision.CompareTag("Wall")== true){
+               Shake(this); //gameobject
             }
         }
 
@@ -48,12 +48,12 @@ public class PlayerState : MonoBehaviour
         gameObject.transform.position = respawnPosition.transform.position;
     }*/
 
-    /*public void CoinPickup() {
-        coinAmount++;
-    }*/
+   /* public void IngredientPickup() {
+        ingredientAmount++;
+    } 
 
     public void ChangeRespawnPosition(GameObject newRespawnPosition) {
         respawnPosition = newRespawnPosition;
-    }
+    }*/
 
 }
