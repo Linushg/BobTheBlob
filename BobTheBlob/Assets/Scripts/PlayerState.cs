@@ -19,6 +19,7 @@ public class PlayerState : MonoBehaviour
     void Start()
     {
         ingredientPoints = initialIngredientPoints;
+
         if (useStartPosition == true){
             gameObject.transform.position = startPosition.transform.position;
         }
@@ -26,12 +27,17 @@ public class PlayerState : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   /* void Update() //kanske jättekonstigt
     {
-        
-    }
-    /*public void DoHarm(int doHarmByThisMuch) {
-        healthPoints -= doHarmByThisMuch;
+        //private void onTriggerEnter2D(Collider collision){
+            //if (collision.CompareTag("Wall")== true){
+               // Shake(this); //gameobject
+            }
+        }
+
+    /*}
+    /*public void LoseIngrediant(int takeAwayThisMuch) {
+        healthPoints -= takeAwayThisMuch;
         if (healthPoints <= 0) {
             Respawn();
         }

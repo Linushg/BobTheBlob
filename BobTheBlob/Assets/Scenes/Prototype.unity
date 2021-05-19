@@ -2416,8 +2416,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: playerblob
       objectReference: {fileID: 0}
+    - target: {fileID: 8285455301243597808, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
+      propertyPath: speed
+      value: 1500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
+--- !u!1 &6343700895542766923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 727094696131615997, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
+  m_PrefabInstance: {fileID: 6343700895542766922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6343700895542766924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343700895542766923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bea9810d77c745479e77e6976f32772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientPoints: 2
+  initialIngredientPoints: 0
+  amountOfIngredients: 0
+  respawnPosition: {fileID: 0}
+  startPosition: {fileID: 0}
+  useStartPosition: 0
 --- !u!1001 &7341857793788268972
 PrefabInstance:
   m_ObjectHideFlags: 0
