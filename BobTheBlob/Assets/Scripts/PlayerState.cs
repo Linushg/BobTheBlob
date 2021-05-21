@@ -44,10 +44,9 @@ public class PlayerState : MonoBehaviour
         }
     }
 
-    /*public void Respawn() {
+    public void Respawn() {
         healthPoints = initialHealthPoints;
-        gameObject.transform.position = respawnPosition.transform.position;
-    }*/
+    }
 
    /* public void IngredientPickup() {
         ingredientAmount++;
