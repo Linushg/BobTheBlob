@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private GameObject nextTarget;
 
-    [SerializeField] private float speed = 1f;
+    [SerializeField] private float speed = 0.3f;
 
     [SerializeField] private List<GameObject> targetPoints;
     private int currenTargetPointIndex;

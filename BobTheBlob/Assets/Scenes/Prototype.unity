@@ -1046,7 +1046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTarget: {fileID: 0}
-  speed: 1
+  speed: 0.2
   targetPoints:
   - {fileID: 472223440}
   - {fileID: 2121231644}
