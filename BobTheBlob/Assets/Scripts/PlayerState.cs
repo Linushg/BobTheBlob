@@ -35,13 +35,14 @@ public class PlayerState : MonoBehaviour
             }
         }
 
-    /*}
-    /*public void LoseIngrediant(int takeAwayThisMuch) {
-        healthPoints -= takeAwayThisMuch;
+    }*/
+
+    public void DoHarm(int doHarmByThisMuch) {
+        healthPoints -= doHarmByThisMuch;
         if (healthPoints <= 0) {
             Respawn();
         }
-    }*/
+    }
 
     /*public void Respawn() {
         healthPoints = initialHealthPoints;
