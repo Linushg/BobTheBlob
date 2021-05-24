@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private GameObject nextTarget;
-
-    [SerializeField] private float speed = 0.3f;
-
+    [SerializeField] private float speed = 3f;
     [SerializeField] private List<GameObject> targetPoints;
-    private int currenTargetPointIndex;
-
-    // Start is called before the first frame update
+    private int currentTargetPointIndex;
     void Start()
     {
         if (targetPoints.Count > 0)
@@ -19,39 +16,29 @@ public class EnemyMovement : MonoBehaviour
             nextTarget = targetPoints[0];
         }
     }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (nextTarget != null)
         {
             MoveToPosition(nextTarget);
         }
-
     }
-
     private void MoveToPosition(GameObject moveToTarget)
     {
-        gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, moveToTarget.transform.position, speed);
+        gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, moveToTarget.transform.position, speed * Time.fixedDeltaTime);
         if (gameObject.transform.position == moveToTarget.transform.position)
         {
             ChangeTarget();
         }
     }
-
     private void ChangeTarget()
     {
-        currenTargetPointIndex++;
 
-        while (targetPoints[currenTargetPointIndex] == null)
+        currentTargetPointIndex++;
+        if (currentTargetPointIndex >= targetPoints.Count)
         {
-            currenTargetPointIndex++;
-            if (currenTargetPointIndex >= targetPoints.Count)
-            {
-                currenTargetPointIndex = 0;
-            }
+            currentTargetPointIndex = 0;
         }
-
-        nextTarget = targetPoints[currenTargetPointIndex];
+        nextTarget = targetPoints[currentTargetPointIndex];
     }
 }
