@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Movement : MonoBehaviour
 {
@@ -53,6 +55,16 @@ public class Movement : MonoBehaviour
             {
                 rb.velocity = new Vector2(1 * speed * Time.deltaTime, 0);
             }
+
+            // Check if Esc/Back (Android) was pressed this frame
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+
+                // Quit to main menu
+                SceneManager.LoadScene(0);
+            }
+
+
 
             /////////////////////
             /////TOUCH INPUT/////
@@ -186,7 +198,7 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Wall" && rb.velocity.x == 0 && rb.velocity.y == 0)
+        if (collision.gameObject.tag == "Wall"/* && rb.velocity.x == 0 && rb.velocity.y == 0*/)
         {
             canMove = true;
         }

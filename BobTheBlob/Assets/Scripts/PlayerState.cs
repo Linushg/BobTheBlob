@@ -44,15 +44,17 @@ public class PlayerState : MonoBehaviour
         }
     }
 
-    public void Respawn() {
+    public void Respawn()
+    {
         healthPoints = initialHealthPoints;
     }
 
-   /* public void IngredientPickup() {
+    public void IngredientPickup()
+    {
         ingredientAmount++;
-    } 
+    }
 
-    public void ChangeRespawnPosition(GameObject newRespawnPosition) {
+    /*public void ChangeRespawnPosition(GameObject newRespawnPosition) {
         respawnPosition = newRespawnPosition;
     }*/
 
