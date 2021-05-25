@@ -9,8 +9,14 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private List<GameObject> targetPoints;
     private int currentTargetPointIndex;
+    
+    SpriteRenderer spriteRenderer;
+    bool isFacingRight = false;
+
     void Start()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
         if (targetPoints.Count > 0)
         {
             nextTarget = targetPoints[0];
@@ -33,7 +39,15 @@ public class EnemyMovement : MonoBehaviour
     }
     private void ChangeTarget()
     {
-
+        if(isFacingRight == false)
+        {
+            spriteRenderer.flipX = false;
+            isFacingRight = true;
+        } else if (isFacingRight == true)
+        {
+            spriteRenderer.flipX = true;
+            isFacingRight = false;
+        }
         currentTargetPointIndex++;
         if (currentTargetPointIndex >= targetPoints.Count)
         {
