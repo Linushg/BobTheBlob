@@ -12,12 +12,15 @@ public class Movement : MonoBehaviour
     private Vector2 startPos;
     public int pixelDistToDectect = 50;
     private bool fingerDown;
+    SpriteRenderer spriteRenderer;
+    bool isFacingRight = true;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         canMove = true;
     }
@@ -49,11 +52,13 @@ public class Movement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
                 rb.velocity = new Vector2(-1 * speed * Time.deltaTime, 0);
+                isFacingRight = false;
             }
 
             if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
                 rb.velocity = new Vector2(1 * speed * Time.deltaTime, 0);
+                isFacingRight = true;
             }
 
             // Check if Esc/Back (Android) was pressed this frame
@@ -193,6 +198,16 @@ public class Movement : MonoBehaviour
                 fingerDown = false;
             }
 
+        }
+        
+        if(isFacingRight == true)
+        {
+            spriteRenderer.flipX = false;
+            //isFacingRight = true;
+        } else if (isFacingRight == false)
+        {
+            spriteRenderer.flipX = true;
+            //isFacingRight = false;
         }
     }
 
