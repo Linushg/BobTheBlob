@@ -7,7 +7,6 @@ public class PlayerState : MonoBehaviour
   // Bob the blob
     public int healthPoints = 2;
     public int initialHealthPoints = 3;
-
     public int ingredientAmount = 0;
 
     /*public GameObject respawnPosition;

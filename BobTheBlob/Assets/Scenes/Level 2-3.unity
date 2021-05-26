@@ -1074,11 +1074,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5873816622230600888, guid: 2dd40f34fc89d43b1a0d3ef857e98d1d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5873816622230600888, guid: 2dd40f34fc89d43b1a0d3ef857e98d1d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5873816622230600888, guid: 2dd40f34fc89d43b1a0d3ef857e98d1d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2170,22 +2170,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1029004603326112736, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1029004603326112736, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1029004603627916567, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1029004603627916567, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 1029004604893700130, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
       propertyPath: m_Name
       value: EnemyParent
@@ -2196,15 +2180,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1029004604893700133, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.319198
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 1029004604893700133, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.342947
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 1029004604893700133, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -494.43896
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1029004604893700133, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2236,11 +2220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1029004604965404716, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1029004604965404716, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7b2dc33ceef8346b1646b441978cbb, type: 3}
@@ -3575,32 +3555,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: playerblob
       objectReference: {fileID: 0}
-    - target: {fileID: 8285455301243597808, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
-      propertyPath: speed
-      value: 1500
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
---- !u!1 &6343700895542766923 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 727094696131615997, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
-  m_PrefabInstance: {fileID: 6343700895542766922}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6343700895542766924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6343700895542766923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bea9810d77c745479e77e6976f32772, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 2
-  initialHealthPoints: 3
-  ingredientAmount: 0
 --- !u!1001 &7341857793788268972
 PrefabInstance:
   m_ObjectHideFlags: 0
