@@ -111,6 +111,7 @@ public class Movement : MonoBehaviour
                     {
                         fingerDown = false;
                         rb.velocity = new Vector2(-1 * speed * Time.deltaTime, 0);
+                        isFacingRight = false;
                         Debug.Log("Swipe left");
                     }
 
@@ -120,6 +121,7 @@ public class Movement : MonoBehaviour
                     {
                         fingerDown = false;
                         rb.velocity = new Vector2(1 * speed * Time.deltaTime, 0);
+                        isFacingRight = true;
                         Debug.Log("Swipe right");
                     }
 
@@ -173,6 +175,7 @@ public class Movement : MonoBehaviour
                 {
                     fingerDown = false;
                     rb.velocity = new Vector2(-1 * speed * Time.deltaTime, 0);
+                    isFacingRight = false;
                     Debug.Log("Mouse left");
                 }
 
@@ -182,6 +185,7 @@ public class Movement : MonoBehaviour
                 {
                     fingerDown = false;
                     rb.velocity = new Vector2(1 * speed * Time.deltaTime, 0);
+                    isFacingRight = true;
                     Debug.Log("Mouse right");
                 }
 
