@@ -9,20 +9,20 @@ public class PlayerState : MonoBehaviour
     public int initialHealthPoints = 3;
     public int ingredientAmount = 0;
 
-    /*public GameObject respawnPosition;
+    public GameObject respawnPosition;
     [SerializeField] public GameObject startPosition;
     [SerializeField] public bool useStartPosition;
-  */
+  
 
     // Start is called before the first frame update
     void Start()
     {
         healthPoints = initialHealthPoints;
 
-        /* if (useStartPosition == true){
+         if (useStartPosition == true){
             gameObject.transform.position = startPosition.transform.position;
         }
-        respawnPosition = startPosition; */
+        respawnPosition = startPosition; 
     }
 
     // Update is called once per frame
@@ -53,8 +53,8 @@ public class PlayerState : MonoBehaviour
         ingredientAmount++;
     }
 
-    /*public void ChangeRespawnPosition(GameObject newRespawnPosition) {
+    public void ChangeRespawnPosition(GameObject newRespawnPosition) {
         respawnPosition = newRespawnPosition;
-    }*/
+    }
 
 }
