@@ -214,7 +214,14 @@ public class Movement : MonoBehaviour
             //isFacingRight = false;
         }
     }
-
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Start")
+        {
+            //Debug.Log("Start");
+            canMove = true;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Wall"/* && rb.velocity.x == 0 && rb.velocity.y == 0*/)

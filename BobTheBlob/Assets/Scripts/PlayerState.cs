@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerState : MonoBehaviour
 {
@@ -10,17 +11,19 @@ public class PlayerState : MonoBehaviour
     public int ingredientAmount = 0;
 
     public GameObject respawnPosition;
-    [SerializeField] public GameObject startPosition;
+    public GameObject startPosition;
     [SerializeField] public bool useStartPosition;
+    [SerializeField] int gameover;
   
 
     // Start is called before the first frame update
     void Start()
     {
         healthPoints = initialHealthPoints;
-
-         if (useStartPosition == true){
+        startPosition = GameObject.Find("start");
+        if (useStartPosition == true){
             gameObject.transform.position = startPosition.transform.position;
+            
         }
         respawnPosition = startPosition; 
     }
@@ -38,9 +41,16 @@ public class PlayerState : MonoBehaviour
 
     public void DoHarm(int doHarmByThisMuch) {
         healthPoints -= doHarmByThisMuch;
-        if (healthPoints <= 0) {
-            Respawn();
+        if (healthPoints <= 0) 
+        {
+            SceneManager.LoadScene(gameover);
         }
+        else
+        {
+            gameObject.transform.position = startPosition.transform.position;
+            
+        }
+
     }
 
     public void Respawn()

@@ -2831,7 +2831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 727094696131615988, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.508
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 727094696131615988, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2868,14 +2868,6 @@ PrefabInstance:
     - target: {fileID: 727094696131615997, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
       propertyPath: m_Name
       value: playerblob
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878533399797745775, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
-      propertyPath: startPosition
-      value: 
-      objectReference: {fileID: 7341857793788268973}
-    - target: {fileID: 5878533399797745775, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
-      propertyPath: useStartPosition
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a88d5a6f6bc69e43ac32cce8e757ac8, type: 3}
@@ -2919,11 +2911,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3980615126909540710, guid: d86cad05706ab2c43ad22b25bc83c75c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 15.5
       objectReference: {fileID: 0}
     - target: {fileID: 3980615126909540710, guid: d86cad05706ab2c43ad22b25bc83c75c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3980615126909540710, guid: d86cad05706ab2c43ad22b25bc83c75c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2959,11 +2951,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d86cad05706ab2c43ad22b25bc83c75c, type: 3}
---- !u!1 &7341857793788268973 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1285374177615495020, guid: d86cad05706ab2c43ad22b25bc83c75c, type: 3}
-  m_PrefabInstance: {fileID: 7341857793788268972}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8537238721432296997
 PrefabInstance:
   m_ObjectHideFlags: 0
