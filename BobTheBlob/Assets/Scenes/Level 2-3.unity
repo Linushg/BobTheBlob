@@ -3664,6 +3664,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7308364443229166803, guid: 7ad15d842f82e524e9b9fdff564ec5a4, type: 3}
+      propertyPath: levelToLoad
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ad15d842f82e524e9b9fdff564ec5a4, type: 3}
 --- !u!1001 &6343700895542766922
