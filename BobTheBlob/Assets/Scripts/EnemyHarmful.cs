@@ -12,6 +12,8 @@ public class EnemyHarmful : MonoBehaviour
         {
             //Debug.Log("Ouch");
             collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
+
+            FindObjectOfType<AudioManager>().Play("PlayerDeath");
         }
     }
 }
