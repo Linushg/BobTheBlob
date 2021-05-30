@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 154894562, guid: 2dd40f34fc89d43b1a0d3ef857e98d1d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d2c8cb5c3b5494ff290b4e346f2e377b, type: 3}
+    - target: {fileID: 5873816622230600886, guid: 2dd40f34fc89d43b1a0d3ef857e98d1d, type: 3}
+      propertyPath: pickUpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d2c8cb5c3b5494ff290b4e346f2e377b, type: 3}
     - target: {fileID: 5873816622230600887, guid: 2dd40f34fc89d43b1a0d3ef857e98d1d, type: 3}
       propertyPath: m_Name
       value: Leafpickup

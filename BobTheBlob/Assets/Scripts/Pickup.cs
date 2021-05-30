@@ -8,8 +8,8 @@ public class Pickup : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     //[SerializeField] private Animator animator;
 
-    //[SerializeField] private AudioSource audioSource;
-    //[SerializeField] private AudioClip pickUpClip;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip pickUpClip;
     
     private bool canPickUp = true;
 
@@ -43,7 +43,7 @@ public class Pickup : MonoBehaviour
                 removeGameObject = true;
                 canPickUp = false;
                 //audioSource.pitch = Random.Range(0.9f, 1.1f);
-                //audioSource.PlayOneShot(pickUpClip);
+                audioSource.PlayOneShot(pickUpClip);
             }
         }
     }
