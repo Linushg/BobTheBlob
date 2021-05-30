@@ -2813,6 +2813,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 154894562, guid: 2dd40f34fc89d43b1a0d3ef857e98d1d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d2c8cb5c3b5494ff290b4e346f2e377b, type: 3}
+    - target: {fileID: 5873816622230600886, guid: 2dd40f34fc89d43b1a0d3ef857e98d1d, type: 3}
+      propertyPath: pickUpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d2c8cb5c3b5494ff290b4e346f2e377b, type: 3}
     - target: {fileID: 5873816622230600887, guid: 2dd40f34fc89d43b1a0d3ef857e98d1d, type: 3}
       propertyPath: m_Name
       value: Leafpickup
@@ -3109,7 +3117,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d86cad05706ab2c43ad22b25bc83c75c, type: 3}
-<<<<<<< HEAD
 --- !u!1 &7341857793788268973 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1285374177615495020, guid: d86cad05706ab2c43ad22b25bc83c75c, type: 3}
@@ -3211,8 +3218,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-=======
->>>>>>> bff0fdebb44bd0d161ae72ea9c8f4e48603299fb
 --- !u!1001 &8537238721432296997
 PrefabInstance:
   m_ObjectHideFlags: 0
