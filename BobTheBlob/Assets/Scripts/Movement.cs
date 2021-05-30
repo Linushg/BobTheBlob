@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
-                rb.velocity = new Vector2(0, 1 * speed * Time.deltaTime);
+                rb.velocity = new Vector2(0, 1 * speed * Time.deltaTime); //moves bob  thru adding a force to his ridgid body
             }
 
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))

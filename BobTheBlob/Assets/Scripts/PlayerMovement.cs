@@ -17,12 +17,9 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 2f;
     private float defaultMovementSpeed;
 
-    //private bool isButtonPressed = false;
-    //private bool isMoving;
     private bool isVertical;
     private bool isHorizontal;
     private float moveDirection = 0f;
-    //private bool isJumpPressed = false;
     public float jumpForce = 10f;
 
     private bool isFacingLeft = false;
@@ -58,8 +55,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveDirection = Input.GetAxis("Vertical");
             isVertical = true;
-            isHorizontal = false;
-            //isButtonPressed = true;
+            isHorizontal = false; //Locks the player so it cant move horizontally
         }
 
         if (Input.GetKey(KeyCode.S) == true || Input.GetKey(KeyCode.DownArrow) == true)
@@ -72,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A) == true || Input.GetKey(KeyCode.D) == true || Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKey(KeyCode.RightArrow) == true)
         {
             moveDirection = Input.GetAxis("Horizontal");
-            isVertical = false;
+            isVertical = false; //Locks the player so it cant move  verticlly
             isHorizontal = true;
         }
 
@@ -147,20 +143,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            //moveDirection = Input.GetAxis("Horizontal");
-            //moveDirection = Input.GetAxis("Vertical");
-            /*if (Mathf.Abs(moveDirection) > 0.05)
-            {
-                isMoving = true;
-            }
-            else
-            {
-                isMoving = false;
-            }*/
-
-
-            //animator.SetBool("IsGrounded", isGrounded);
-            //animator.SetFloat("Speed", Mathf.Abs(moveDirection));
         }
 
         /////MOUSE INPUT/////
@@ -263,22 +245,6 @@ public class PlayerMovement : MonoBehaviour
     private void Move(Vector2 moveDirection)
     {
         rigidBody2D.velocity = Vector3.SmoothDamp(rigidBody2D.velocity, moveDirection, ref velocity, smoothTime);
-
-        /* if (isJumpPressed == true && isGrounded == true)
-         {
-             rigidBody2D.AddForce(new Vector2(0f, jumpForce * 100f));
-         }
-
-         if (moveDirection.x > 0f && isFacingLeft == true)
-         {
-             FlipSpriteDirection();
-         }
-
-         else if (moveDirection.x < 0f && isFacingLeft == false)
-         {
-             FlipSpriteDirection();
-         }*/
-
     }
 
     private void FlipSpriteDirection()
